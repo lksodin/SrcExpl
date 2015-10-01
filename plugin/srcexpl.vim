@@ -847,7 +847,8 @@ function! <SID>SrcExpl_SelToJump()
     " Indeed go back to the edit window
     silent! exe s:SrcExpl_editWin . "wincmd w"
     " Open the file containing the definition context
-    exe "edit " . l:fpath
+    " odin_test # open files in new tab
+    exe "tabnew " . l:fpath
 
     " Modify the EX Command to locate the tag exactly
     let l:expr = substitute(l:excmd, '/^', '/^\\C', 'g')
